@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@4.11.1/dist/web3.min.js"></script>
+    <script src="./contracts.js"></script>
+	<script src="./script.js"></script>
+</head>
+<body>
+
+<button id="conect" onclick="connect()"><label id="account" style="cursor: pointer;">Conectar</label> </button><br>
+
+  <div id='swap-box'>
+    <div id="swap-menu">
+      <label class="token">USDT</label> to <label class="token">Aleph</label>
+    </div>
+
+    <div id="swap-title-box">
+		  <p id="swap-title">Swap</p>
+		  <p id="swap-subtitle">Trade tokens in an instant</p>
+	  </div>
+
+    <div id="swap-form-box">
+      <div id='form' onSubmit='handleSubmit()'>
+
+        <label>
+          <img id="alineadoTextoImagenCentro" src='./Aleph.png' class="logo" /> <label class="token">Aleph</label>
+          <div class="swap-balance pick-balance">Balance: <label class="balance" id="balanceAleph">0</label></div>
+        </label>
+
+        <input onChange='setValueTokenToSpend()' type="text" class="IHAVE" placeholder="0.0"></input>
+
+       <br>
+
+        <label>
+        <img id="alineadoTextoImagenCentro" src='./USDT.png' class="logo"/><label class="token">USDT</label>
+          <div class="swap-balance">Balance: <label class="balance" id="balanceUSDT">0</label></div>
+        </label>
+
+        <input type="text" class="IWANT" placeholder="0.0"></input>
+
+        <div className="separador-vertical"></div>
+
+        <label id="swap-price-word">Price 
+          <div id="swap-price">
+            TOKEN_PRICE <label class="precio">0</label> USDT
+          </div>
+        </label>
+
+        
+        <button id="swap-submit" name="submit" onclick="handleSubmit()">Swap</button>
+        
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="toast"></div>
+
+  <div id="spinner" class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+  
+
+
+</body>
+</html>
